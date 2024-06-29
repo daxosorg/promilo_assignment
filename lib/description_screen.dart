@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:promilo_assignment/second_screen.dart';
+import 'package:share_plus/share_plus.dart';
 
 class DescriptionScreen extends StatelessWidget {
   const DescriptionScreen({super.key});
@@ -50,7 +51,11 @@ class DescriptionScreen extends StatelessWidget {
                       IconButton(icon: const Icon(Icons.favorite_border), onPressed: () {}),
                       IconButton(icon: const Icon(Icons.crop_free), onPressed: () {}),
                       IconButton(icon: const Icon(Icons.star_border), onPressed: () {}),
-                      IconButton(icon: const Icon(Icons.share), onPressed: () {}),
+                      InkWell(
+                          onTap: () {
+                            Share.share('check out my website https://example.com');
+                          },
+                          child: IconButton(icon: const Icon(Icons.share), onPressed: () {})),
                     ],
                   ),
                 ),
